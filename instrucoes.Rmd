@@ -1,0 +1,55 @@
+---
+title: "Curva de Juros atual"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+[//]:```{r message=FALSE}
+[//]:source("/home/ideapad/Documentos/RStudio/BRYieldCurve/BRYieldCurve/current yield curve.R")
+[//]:```
+
+```{r results='asis', echo=FALSE, include=FALSE,}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE)
+#formating tables
+library(xtable)
+library(ggplot2)
+library(GetTDData)
+```
+
+### Pacotes necessários
+* ggplot2
+* GetTDData
+
+## Criando a curva de juros através das informações da ANBIMA
+
+Utilizando do pacote GetTDData a função get.yield.curve() é encaminhada para um dataframe que salva três informações, inflação implícia, juros nominal e juros real.
+
+```{r get.yield.curve()}
+df.yield <- get.yield.curve()
+str(df.yield)
+```
+
+## Dataframe com inflação implícia, juros nominal e juros real
+```{r results = "asis",  echo=FALSE}
+df.table <- xtable(df.yield)
+print(df.table)
+print(df.table, type = "html")
+```
+
+## Usando o ggplot2 para visualizar o dataframe
+
+Esta é a curva de juros atual:
+
+```{r pressure, echo=FALSE}
+p <- ggplot(df.yield, aes(x=ref.date, y = value) ) +
+  geom_line(size=1) + geom_point() + facet_grid(~type, scales = 'free') + 
+  scale_x_date(date_breaks = "6 months", date_minor_breaks = "3 months", date_labels = "'%y") +
+  scale_y_continuous(n.breaks = 20) +
+  labs(title = paste0('The current Brazilian Yield Curve '),
+       subtitle = paste0('Date: ', df.yield$current.date[1]))     
+plot(p)
+```
+
+[//]: Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
