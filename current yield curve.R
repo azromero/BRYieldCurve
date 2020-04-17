@@ -3,8 +3,13 @@ library(GetTDData)
 
 
 df.yield <- get.yield.curve()  
-my.df <- df.yield$type$real_return
+# my.df <- df.yield$type$real_return to querendo sem conseguir pegar só o real_return
 str(df.yield)
+
+df.table <- xtable(df.yield)
+print(df.table)
+print(df.table, type = "html")
+
 
 p <- ggplot(df.yield, aes(x=ref.date, y = value) ) +
   geom_line(size=1) + geom_point() + facet_grid(~type, scales = 'free') + 
@@ -18,7 +23,7 @@ print(p)
 
 
 # plot data (yields)
-p <- ggplot(data = my.df, aes(x = as.Date(ref.date), y = yield.bid, color = asset.code))
-p <- p + geom_line() + scale_x_date() + labs(title = '', x = 'Dates', y = 'Yields' )
-print(p)
+# p <- ggplot(data = my.df, aes(x = as.Date(ref.date), y = yield.bid, color = asset.code))
+# p <- p + geom_line() + scale_x_date() + labs(title = '', x = 'Dates', y = 'Yields' )
+# print(p)
 
