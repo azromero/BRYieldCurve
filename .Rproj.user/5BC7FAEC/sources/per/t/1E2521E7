@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1587053892781.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "1E2521E7",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1587053892781,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "F2397326",
+        "caption" : "df.yield",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=df.yield&cache_key=F2397326",
+        "displayedObservations" : 111,
+        "environment" : "",
+        "expression" : "df.yield",
+        "object" : "df.yield",
+        "preview" : 0,
+        "totalObservations" : 111,
+        "variables" : 5
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1587052829249.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4023270205",
+    "id" : "3154A541",
+    "lastKnownWriteTime" : 1587074496,
+    "last_content_update" : 1587074496796,
+    "path" : "~/Documentos/RStudio/BRYieldCurve/current yield curve.R",
+    "project_path" : "current yield curve.R",
+    "properties" : {
+        "cursorPosition" : "19,0",
+        "scrollLine" : "5"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
